@@ -38,6 +38,7 @@ if ($page_mode == 'register') {
                 VALUES ('$name1', '$surname1', '$phone1', '$email1',
                 '$name2', '$surname2', '$phone2', '$email2', '$user_name', '$password')");
     header('Location: thankyou_register.php');
+    $db->disconnect();
 //    }
 }
 
