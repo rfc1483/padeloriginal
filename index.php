@@ -1,6 +1,4 @@
-<link rel="stylesheet" type="text/css" href="style.css" />
-<?php include("lib/class.php"); ?>
-
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <?php
 session_start();
 ?>
@@ -15,9 +13,9 @@ session_start();
         <br /><br />;
         <a href='logout.php'>Log out</a>;
     <?php else: ?>
-        Registro <a href='register.php'>aqui</a> <br />
-        Autentificacion <a href='login.php'>aqui</a> <br />
-        Busqueda <a href='find/index.php'>aqui</a>
+        Registro <a href='lib/view_register.php'>aqui</a> <br />
+        Autentificacion <a href='view_login.php'>aqui</a> <br />
+        Busqueda <a href='find/view_index.php'>aqui</a>
     <?php endif; ?>
 </body>
 </html>

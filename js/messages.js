@@ -194,5 +194,6 @@ function topPosition(target) {
 // preload the arrow //
 if(document.images) {
     arrow = new Image(7,80);
-    arrow.src = "images/msg_arrow.gif";
+    arrow.src = "../img/msg_arrow.gif";
+//    arrow.src = "images/msg_arrow.gif";
 }
