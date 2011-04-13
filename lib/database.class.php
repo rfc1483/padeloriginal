@@ -1,14 +1,15 @@
 <?php
 
-/* * * mysql hostname ** */
+/* mysql hostname */
 $hostname = 'localhost';
 
-/* * * mysql username ** */
+/* mysql username */
 $username = 'root';
 
-/* * * mysql password ** */
+/* mysql password */
 $password = '';
-/* * * mysql dbname ** */
+
+/* mysql dbname */
 $dbname = 'padel';
 
 

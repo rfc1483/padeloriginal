@@ -16,6 +16,11 @@ if ($page_mode == 'register') {
     $password = $_POST['password'];
     $conf_password = $_POST['conf_password'];
 
+//    $result = db_query("SELECT id FROM team WHERE email1='" . mysql_real_escape_string($email1) . "'");
+//    $result2 = db_query("SELECT id FROM team WHERE email2='" . mysql_real_escape_string($email2) . "'");
+//    if (mysql_num_rows($result) > 0)
+//        echo 'La direccion de e-mail ya esta registrada.<br>';
+//    else {
     $name1 = mysql_real_escape_string($name1);
     $surname1 = mysql_real_escape_string($surname1);
     $phone1 = mysql_real_escape_string($phone1);
@@ -26,8 +31,13 @@ if ($page_mode == 'register') {
     $email2 = mysql_real_escape_string($email2);
     $user_name = mysql_real_escape_string($user_name);
     $password = sha1($password); // hash password
+//    echo "clave -> " . $password . "hash -> " . sha1($password);
+//    query("INSERT INTO team (name1, surname1, phone1, email1, 
+//                name2, surname2, phone2, email2, user_name, password) 
+//                VALUES ('$name1', '$surname1', '$phone1', '$email1',
+//                '$name2', '$surname2', '$phone2', '$email2', '$user_name', '$password')");
 
-    /* INSERT data */
+    /*     * * INSERT data ** */
     $count = $dbh->exec("INSERT INTO team 
             (
             name1, 
@@ -55,9 +65,17 @@ if ($page_mode == 'register') {
             '$password'
             )"
     );
-    /* close the database connection ** */
-    $dbh = null;
+
+    /*     * * echo the number of affected rows ** */
+    echo $count;
     header('Location: thankyou_register.php');
+    $db->disconnect();
+//    }
 }
+
+function isValidEmail($email = '') {
+    return preg_match("/^[\d\w\/+!=#|$?%{^&}*`'~-][\d\w\/\.+!=#|$?%{^&}*`'~-]*@[A-Z0-9][A-Z0-9.-]{1,61}[A-Z0-9]\.[A-Z]{2,6}$/ix", $email);
+}
+
 require('view_register.php');
 ?>
