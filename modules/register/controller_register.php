@@ -32,11 +32,42 @@ if ($page_mode == 'register') {
     $user_name = mysql_real_escape_string($user_name);
     $password = sha1($password); // hash password
 //    echo "clave -> " . $password . "hash -> " . sha1($password);
+//    query("INSERT INTO team (name1, surname1, phone1, email1, 
+//                name2, surname2, phone2, email2, user_name, password) 
+//                VALUES ('$name1', '$surname1', '$phone1', '$email1',
+//                '$name2', '$surname2', '$phone2', '$email2', '$user_name', '$password')");
 
-    db_query("INSERT INTO team (name1, surname1, phone1, email1, 
-                name2, surname2, phone2, email2, user_name, password) 
-                VALUES ('$name1', '$surname1', '$phone1', '$email1',
-                '$name2', '$surname2', '$phone2', '$email2', '$user_name', '$password')");
+    /*     * * INSERT data ** */
+    $count = $dbh->exec("INSERT INTO team 
+            (
+            name1, 
+            surname1, 
+            phone1, 
+            email1, 
+            name2, 
+            surname2, 
+            phone2, 
+            email2, 
+            user_name, 
+            password
+            ) 
+            VALUES 
+            (
+            '$name1', 
+            '$surname1', 
+            '$phone1', 
+            '$email1',
+            '$name2', 
+            '$surname2', 
+            '$phone2', 
+            '$email2', 
+            '$user_name', 
+            '$password'
+            )"
+    );
+
+    /*     * * echo the number of affected rows ** */
+    echo $count;
     header('Location: thankyou_register.php');
     $db->disconnect();
 //    }
