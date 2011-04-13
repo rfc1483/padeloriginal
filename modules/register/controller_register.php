@@ -8,7 +8,7 @@ if ($page_mode == 'register') {
     $surname1 = trim($_POST['surname1']);
     $phone1 = trim($_POST['phone1']);
     $email1 = trim($_POST['email1']);
-    $name2 = trim($_POST['name2']); // trim to remove whitespace
+    $name2 = trim($_POST['name2']);
     $surname2 = trim($_POST['surname2']);
     $phone2 = trim($_POST['phone2']);
     $email2 = trim($_POST['email2']);
@@ -38,7 +38,6 @@ if ($page_mode == 'register') {
                 VALUES ('$name1', '$surname1', '$phone1', '$email1',
                 '$name2', '$surname2', '$phone2', '$email2', '$user_name', '$password')");
     header('Location: thankyou_register.php');
-    exit();
 //    }
 }
 

@@ -13,7 +13,7 @@ session_start();
         <br /><br />;
         <a href='logout.php'>Log out</a>;
     <?php else: ?>
-        Registro <a href='modules/view_register.php'>aqui</a> <br />
+        Registro <a href='modules/register/view_register.php'>aqui</a> <br />
         Autentificacion <a href='view_login.php'>aqui</a> <br />
         Busqueda <a href='find/view_index.php'>aqui</a>
     <?php endif; ?>
