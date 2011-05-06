@@ -14,7 +14,7 @@ session_start();
         <a href='logout.php'>Log out</a>;
     <?php else: ?>
         Registro <a href='register.php'>aqui</a> <br />
-        Autentificacion <a href='modules/login/view_login.php'>aqui</a> <br />
+        Autentificacion <a href='login.php'>aqui</a> <br />
         Busqueda <a href='find/view_index.php'>aqui</a>
     <?php endif; ?>
 </body>
